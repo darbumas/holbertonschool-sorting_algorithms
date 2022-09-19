@@ -22,7 +22,6 @@ void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 void radix_sort(int *array, size_t size);
 void merge_sort(int *array, size_t size);
+void heap_sort(int *array, size_t size);
 
-void sort_recursive(int *, int *, int, int);
-void merge_arrays(int *, int *, int, int, int);
 #endif
