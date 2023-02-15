@@ -1,13 +1,13 @@
 #include "sort.h"
 
 /**
- * swap_node_right - swaps two adjacent nodes in a doubly linked-list
+ * shift_right - swaps two adjacent nodes in a doubly linked-list
  * in the right direction
  * @head: head of the doubly linked list
  * @tail: tail of the doubly linked list
  * @curr: current swapping node
  */
-void swap_node_right(listint_t **head, listint_t **tail, listint_t **curr)
+void shift_right(listint_t **head, listint_t **tail, listint_t **curr)
 {
 	listint_t *temp = (*curr)->next;
 
@@ -27,13 +27,13 @@ void swap_node_right(listint_t **head, listint_t **tail, listint_t **curr)
 }
 
 /**
- * swap_node_left - swaps two adjacent nodes in a doubly linked-list
+ * shift_left - swaps two adjacent nodes in a doubly linked-list
  * in the left direction
  * @head: head of the doubly linked list
  * @tail: tail of the doubly linked list
  * @curr: current swapping node
  */
-void swap_node_left(listint_t **head, listint_t **tail, listint_t **curr)
+void shift_left(listint_t **head, listint_t **tail, listint_t **curr)
 {
 	listint_t *temp = (*curr)->prev;
 
@@ -52,7 +52,8 @@ void swap_node_left(listint_t **head, listint_t **tail, listint_t **curr)
 	*curr = temp;
 }
 
-/** cocktail_sort_list - sorts doubly linked list in ascending order
+/**
+ * cocktail_sort_list - sorts doubly linked list in ascending order
  * using the Cocktail shaker sort
  * @list: pointer to the head of the doubly linked list to sort.
  */
@@ -74,7 +75,7 @@ void cocktail_sort_list(listint_t **list)
 		{
 			if (shaker->n > shaker->next->n)
 			{
-				swap_node_right(list, &tail, &shaker);
+				shift_right(list, &tail, &shaker);
 				print_list((const listint_t *)*list);
 				cmp = false;
 			}
@@ -84,7 +85,7 @@ void cocktail_sort_list(listint_t **list)
 		{
 			if (shaker->n < shaker->prev->n)
 			{
-				swap_node_left(list, &tail, &shaker);
+				shift_left(list, &tail, &shaker);
 				print_list((const listint_t *)*list);
 				cmp = false;
 			}
