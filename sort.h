@@ -2,6 +2,7 @@
 #define _SORT_H_
 
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 
 /**
